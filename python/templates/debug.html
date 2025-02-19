@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Görünümü</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(18, 20px);
+            gap: 1px;
+            background-color: #eee;
+            padding: 5px;
+        }
+        .cell {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+        .cell.active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug Görünümü</h1>
+    <div class="grid" id="pixelGrid">
+        {% for row in grid %}
+            {% for cell in row %}
+                <div class="cell {% if cell == 1 %}active{% endif %}"></div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+    <button 
+        onclick="handleReset()" 
+        style="
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        "
+    >
+        Sıfırla
+    </button>
+
+    <script>
+        const socket = io();
+        const cells = document.querySelectorAll('.cell');
+
+        // Grid'i güncelle
+        function updateGrid(grid) {
+            grid.forEach((row, y) => {
+                row.forEach((value, x) => {
+                    const index = y * 18 + x;
+                    if (value === 1) {
+                        cells[index].classList.add('active');
+                    } else {
+                        cells[index].classList.remove('active');
+                    }
+                });
+            });
+        }
+
+        // Tek bir pikseli güncelle
+        socket.on('pixel_changed', (data) => {
+            const index = data.y * 18 + data.x;
+            if (data.value === 1) {
+                cells[index].classList.add('active');
+            } else {
+                cells[index].classList.remove('active');
+            }
+        });
+
+        // İlk grid durumunu al
+        socket.on('init_grid', (grid) => {
+            updateGrid(grid);
+        });
+
+        // Piksel tıklama olayları
+        cells.forEach((cell, index) => {
+            cell.addEventListener('click', () => {
+                const x = index % 18;
+                const y = Math.floor(index / 18);
+                const newValue = cell.classList.contains('active') ? 0 : 1;
+                socket.emit('pixel_update', { x, y, value: newValue });
+            });
+        });
+
+        // Reset fonksiyonunu ekle
+        function handleReset() {
+            socket.emit('reset_grid');
+        }
+    </script>
+</body>
+</html> 
