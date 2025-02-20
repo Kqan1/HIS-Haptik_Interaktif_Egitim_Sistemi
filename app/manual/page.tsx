@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { siteConfig } from '@/config/site-config';
 import { Eraser, PencilLine, Trash2 } from 'lucide-react';
 import { useEffect, useState, useRef } from 'react';
 import io, { Socket } from 'socket.io-client';
@@ -15,7 +16,7 @@ export default function Manual() {
     const lastPos = useRef<{ x: number, y: number } | null>(null);
 
     useEffect(() => {
-        const socketInstance = io('http://localhost:5000');
+        const socketInstance = io(`http://${siteConfig.links.python_server}:5000`);
         setSocket(socketInstance);
 
         socketInstance.on('init_grid', (initialGrid: number[][]) => {

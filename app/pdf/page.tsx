@@ -131,7 +131,7 @@ const pdfs = [
 
 
     useEffect(() => {
-        const newSocket = io("http://localhost:5000");
+        const newSocket = io(`http://${siteConfig.links.python_server}:5000`);
         setSocket(newSocket);
 
         return () => newSocket.close();

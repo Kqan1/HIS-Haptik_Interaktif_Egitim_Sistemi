@@ -23,5 +23,6 @@ export const siteConfig = {
     links: {
         url: "http://localhost:3000",
         github: "https://github.com/Kqan1",
+        python_server: "192.168.1.165"
     },
 };
