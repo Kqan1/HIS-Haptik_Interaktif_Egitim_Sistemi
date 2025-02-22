@@ -4,9 +4,12 @@ Bu proje, görme engelliler için tasarlanmış bir yapay zeka öğretmeni uygul
 
 ## Özellikler
 
-- **Sesli Açıklama**: Yapay zeka, konuları sesli olarak açıklayabilir.
+- **Sesli Açıklama**: Yapay zeka sohbeti ile sesli, canlı ve dinamik bir öğrenme deneyimi yaşanabilir.
 - **Braille Desteği**: Matematiksel ifadeler Braille formatında gösterilir.
 - **Kullanıcı Dostu Arayüz**: Kullanıcıların kolayca etkileşimde bulunabilmesi için tasarlanmıştır.
+- **Notlar**: Not kaydedilebilir, düzenlenebilir, silinebilir, okunabilir.
+- **PDF -> Not Desteği**: PDF formatında belgeler braille notlarına dönüştürür.
+- **Ders Kayıtları**: Zaman damgalı ders kayıtları alınabilir ve sonradan dinlenebilir.
 
 ## Kurulum
 
@@ -42,10 +45,6 @@ Bu proje, görme engelliler için tasarlanmış bir yapay zeka öğretmeni uygul
 
 - Uygulama açıldığında, kullanıcılar yapay zeka ile etkileşime geçebilir.
 - Kullanıcılar, matematiksel ifadeleri yazabilir ve yapay zeka bu ifadeleri Braille formatında gösterecektir.
-- Yapay zeka sohbeti ile canlı ve dinamik bir öğrenme deneyimi yaşanabilir.
-- PDF formatında belgeler braille notlarına dönüştürülebilir.
-- Not kaydedilebilir, düzenlenebilir, silinebilir, okunabilir.
-- Zaman damgalı ders kayıtları alınabilir ve sonradan dinlenebilir.
 
 ## Katkıda Bulunma
 
