@@ -42,6 +42,10 @@ Bu proje, görme engelliler için tasarlanmış bir yapay zeka öğretmeni uygul
 
 - Uygulama açıldığında, kullanıcılar yapay zeka ile etkileşime geçebilir.
 - Kullanıcılar, matematiksel ifadeleri yazabilir ve yapay zeka bu ifadeleri Braille formatında gösterecektir.
+- Yapay zeka sohbeti ile canlı ve dinamik bir öğrenme deneyimi yaşanabilir.
+- PDF formatında belgeler braille notlarına dönüştürülebilir.
+- Not kaydedilebilir, düzenlenebilir, silinebilir, okunabilir.
+- Zaman damgalı ders kayıtları alınabilir ve sonradan dinlenebilir.
 
 ## Katkıda Bulunma
 
