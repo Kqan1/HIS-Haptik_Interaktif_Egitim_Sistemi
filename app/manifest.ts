@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "MagTouch",
-        short_name: "MagTouch",
+        name: "HİS",
+        short_name: "HİS",
         description: "A Progressive Web App built with Next.js",
         start_url: "/",
         display: "standalone",

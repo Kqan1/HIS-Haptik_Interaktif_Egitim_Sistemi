@@ -3,8 +3,8 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
     metadata: {
         title: {
-            default: "MagTouch",
-            template: "%s | MagTouch",
+            default: "HİS",
+            template: "%s | HİS",
         },
         description: "Ferman Desc",
         applicationName: "Ferman",
@@ -23,6 +23,7 @@ export const siteConfig = {
     links: {
         url: "http://localhost:3000",
         github: "https://github.com/Kqan1",
-        python_server: "192.168.1.165"
+        // python_server: "192.168.1.165"
+        python_server: "localhost",
     },
 };

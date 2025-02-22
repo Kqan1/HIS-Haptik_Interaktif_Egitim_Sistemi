@@ -38,7 +38,7 @@ export default function Settings() {
         <div className="space-y-4">
             <div className="flex flex-col items-center gap-2">
                 <div className="border rounded bg-zinc-50 size-60" /> {/* image */}
-                <div className="test">Magtouch 1.0</div>
+                <div className="test">HİS 1.0</div>
             </div>
             <Card className="flex justify-between">
                 <p>Bağlantı Sağlandı</p>

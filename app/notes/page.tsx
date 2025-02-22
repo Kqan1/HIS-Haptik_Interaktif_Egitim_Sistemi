@@ -1,6 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
+import { Heading } from "@/components/ui/heading";
 import { db } from "@/lib/db";
-import { Plus } from "lucide-react";
+import { Book, Plus } from "lucide-react";
 import Link from "next/link";
 
 interface NoteCardType {
@@ -14,7 +15,12 @@ export default async function Notes() {
     return (
         <>
             <div className="flex items-center justify-between my-6">
-                <h1 className="text-3xl font-bold">Notlar ({notes.length})</h1>
+                <Heading 
+                    title={`Notlar (${notes.length})`}
+                    description="Buradan kaydettiğin notları okuyabilirsin"
+                    Icon={Book}
+                />
+                <h1 className="text-3xl font-bold"></h1>
                 <Link className={buttonVariants({ size: "icon" })} href="/notes/new">
                     <Plus />
                     <p className="sr-only">Yeni Not</p>

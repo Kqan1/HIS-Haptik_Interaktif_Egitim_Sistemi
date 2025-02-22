@@ -34,7 +34,7 @@ const Links: LinkType[] = [{
 
 export default function Home() {
     return (
-        <div className="grid grid-cols-2 place-items-center gap-4 p-4 sm:p-8">
+        <div className="grid grid-cols-2 place-items-center gap-2 sm:p-8">
             { Links.map((link, index)=>(
                 <LinkCard key={index} Href={link.Href} Label={link.Label} Icon={link.Icon} />
             )) }
@@ -44,7 +44,7 @@ export default function Home() {
 
 function LinkCard({ Label, Href, Icon }: LinkType) {
     return (
-        <Link href={Href} className={cn(buttonVariants({ variant: "outline" }), "size-32 sm:size-64 flex flex-col items-center justify-center gap-2")}>
+        <Link href={Href} className={cn(buttonVariants({ variant: "outline" }), "size-44 sm:size-64 flex flex-col items-center justify-center gap-2")}>
             <Icon className="!size-8 sm:!size-12" />
             <p className="font-medium sm:text-xl">{Label}</p>
         </Link>

@@ -6,6 +6,8 @@
     <title>Debug Görünümü</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist:wght@600&display=swap');
+
         .grid {
             display: grid;
             grid-template-columns: repeat(18, 20px);
@@ -22,10 +24,17 @@
         .cell.active {
             background-color: black;
         }
+
+    .geist-font {
+        font-family: "Geist", serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+    }
     </style>
 </head>
 <body>
-    <h1>Debug Görünümü</h1>
+    <h1 class="geist-font">Python Sunucusu</h1>
     <div class="grid" id="pixelGrid">
         {% for row in grid %}
             {% for cell in row %}

@@ -1,4 +1,5 @@
 "use client";
+import { siteConfig } from "@/config/site-config";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";

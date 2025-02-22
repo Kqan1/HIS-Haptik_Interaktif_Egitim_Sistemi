@@ -14,19 +14,19 @@ export default function LectureRecords() {
     const Cards: CardType[] = [{
         href: "/test",
         date: "2/15/2025",
-        title: "test",
+        title: "Matematik Dersi",
     }, {
         href: "/test",
         date: "2/15/2025",
-        title: "test",
+        title: "Matematik Dersi",
     }, {
         href: "/test",
         date: "2/15/2025",
-        title: "test",
+        title: "Fizik Dersi",
     }, {
         href: "/test",
         date: "2/15/2025",
-        title: "test",
+        title: "Edebiyat Dersi",
     }];
 
     return (
