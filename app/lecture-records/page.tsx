@@ -13,19 +13,19 @@ interface CardType {
 export default function LectureRecords() {
     const Cards: CardType[] = [{
         href: "/test",
-        date: "2/15/2025",
+        date: "15/2/2025",
         title: "Matematik Dersi",
     }, {
         href: "/test",
-        date: "2/15/2025",
+        date: "15/2/2025",
         title: "Matematik Dersi",
     }, {
         href: "/test",
-        date: "2/15/2025",
+        date: "15/2/2025",
         title: "Fizik Dersi",
     }, {
         href: "/test",
-        date: "2/15/2025",
+        date: "15/2/2025",
         title: "Edebiyat Dersi",
     }];
 

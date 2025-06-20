@@ -3,6 +3,14 @@ import Link from 'next/link';
 import React from 'react'
 
 export default function Profile() {
+    if (true) {
+        return (
+            <div className="">
+                Work in progress
+            </div>
+        )
+    }
+    
     return (
         <div className="py-4 space-y-8">
             <div className="flex flex-col items-center justify-center gap-8">

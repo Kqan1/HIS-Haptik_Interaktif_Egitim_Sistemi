@@ -2,11 +2,13 @@
 import { siteConfig } from "@/config/site-config";
 import { Plus } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 
 interface PDFMatrix {
     title: string;
+    href: string;
     matrix: number[][];
 }
 
@@ -16,6 +18,7 @@ const [socket, setSocket] = useState<any>(null);
 const pdfs = [
     {
         title: "Fonksiyon Örnekleri",
+        href: "1",
         matrix: [
             [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // "f(x) ="
             [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // "2x + 3"
@@ -39,6 +42,7 @@ const pdfs = [
     },
     {
         title: "Geometri Örnekleri",
+        href: "2",
         matrix: [
             [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // "Açı ="
             [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // "90°"
@@ -57,6 +61,7 @@ const pdfs = [
         ]
     },{
         title: "Cebir örnekleri",
+        href: "3",
         matrix: [
             [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // "İki kare farkı"
             [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // "a^2 - b^2 = (a-b)(a+b)"
@@ -80,6 +85,7 @@ const pdfs = [
     },
     {
         title: "Trigonometri örnekleri",
+        href: "4",
         matrix: [
             [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // "sin^2(x) + cos^2(x) = 1"
             [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // "tan(x) = sin(x)/cos(x)"
@@ -105,6 +111,7 @@ const pdfs = [
     },
     {
         title: "Olasılık örnekleri",
+        href: "5",
         matrix: [
             [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],  // "P(A U B) = P(A) + P(B) - P(A ∩ B)"
             [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],  // "P(A | B) = P(A ∩ B) / P(B)"
@@ -130,6 +137,7 @@ const pdfs = [
     }
 ];
 
+    const router = useRouter();
 
     useEffect(() => {
         const newSocket = io(`http://${siteConfig.links.python_server}:5000`);
@@ -152,7 +160,7 @@ const pdfs = [
                     <div
                         key={index}
                         className="border aspect-square p-4 rounded cursor-pointer hover:bg-gray-100"
-                        onClick={() => handlePDFClick(pdf.matrix)}
+                        onClick={() => {handlePDFClick(pdf.matrix); router.push(`/pdf/${pdf.href}`)}}
                     >
                         {pdf.title}
                     </div>

@@ -19,7 +19,7 @@ const Links: LinkType[] = [{
     Href: "/notes",
     Icon: NotebookPen
 }, {
-    Label: "Yapay Zeka Asistanı",
+    Label: "Yapay Zeka Öğretmen",
     Href: "/ai-learning",
     Icon: BrainCircuit
 }, {

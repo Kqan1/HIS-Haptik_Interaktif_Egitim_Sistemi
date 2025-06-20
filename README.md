@@ -56,4 +56,4 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## Başarılar
 
-Bu proje TÜBİTAK 2204-A Lise Proje Yarışması(2024-2025)'nda ilk aşamayı geçmiştir.
+Bu proje 56. TÜBİTAK 2204-A Lise Araştırma ve Proje Yarışmasında Türkiye İkinciliğ

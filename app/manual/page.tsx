@@ -19,6 +19,8 @@ export default function Manual() {
         const socketInstance = io(`http://${siteConfig.links.python_server}:5000`);
         setSocket(socketInstance);
 
+        console.log(`http://${siteConfig.links.python_server}:5000`)
+
         socketInstance.on('init_grid', (initialGrid: number[][]) => {
             setGrid(initialGrid);
         });
@@ -129,7 +131,7 @@ export default function Manual() {
                     row.map((cell: number, x: number) => (
                         <div
                             key={`${x}-${y}`}
-                            className={`size-8 border border-gray-200 cursor-pointer ${
+                            className={`size-5 border border-gray-200 cursor-pointer ${
                                 cell === 1 ? 'bg-black' : 'bg-white'
                             }`}
                             onMouseDown={() => handleMouseDown(x, y)}

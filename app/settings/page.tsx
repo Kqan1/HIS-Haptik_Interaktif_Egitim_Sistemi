@@ -5,6 +5,15 @@ import { Ear, Search } from "lucide-react";
 import { PropsWithChildren, useState } from "react";
 
 export default function Settings() {
+
+    if (true) {
+        return (
+            <div className="">
+                Work in progress
+            </div>
+        )
+    };
+
     const [isPlaying, setIsPlaying] = useState(false);
 
     const playSound = () => {

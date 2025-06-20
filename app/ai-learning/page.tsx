@@ -112,7 +112,7 @@ export default function Ai() {
                         },
                     ],
                     temperature: 0.7,
-                    max_tokens: 2000,
+                    max_tokens: 7000,
                 }),
             });
             
@@ -176,7 +176,7 @@ export default function Ai() {
                                     <div className="text-xs text-gray-600 text-right">
                                         {message.timestamp.toLocaleTimeString()}
                                     </div>
-                                    {message.matrix && (
+                                    {/*message.matrix && (
                                         <Dialog>
                                             <DialogTrigger asChild>
                                                 <Button className="mt-2">Matrisi Göster</Button>
@@ -191,7 +191,7 @@ export default function Ai() {
                                                 </DialogClose>
                                             </DialogContent>
                                         </Dialog>
-                                    )}
+                                    )*/}
                                 </div>
                             ))}
                             {isLoading && (
@@ -208,9 +208,6 @@ export default function Ai() {
                                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                                 className="flex-grow"
                             />
-                            <Button size="icon">
-                                <Mic />
-                            </Button>
                             <Button onClick={handleSendMessage} size="icon">
                                 <Send />
                             </Button>

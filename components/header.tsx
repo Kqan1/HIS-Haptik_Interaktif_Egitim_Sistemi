@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <div className="flex justify-center">
             <header className="max-w-screen-md w-full flex justify-between py-1 px-4 border border-zinc-300">
-                <div className="">HİS {`Bağlantı Sağlandı`}</div>
+                <div className="">HİS</div>
                 <div className="flex items-center gap-0.5">
                     <BatteryIndicator BatteryStatus={batterryStatus} />
                 </div>
