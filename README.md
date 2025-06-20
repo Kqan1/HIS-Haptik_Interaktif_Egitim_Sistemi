@@ -56,4 +56,4 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## Başarılar
 
-Bu proje 56. TÜBİTAK 2204-A Lise Araştırma ve Proje Yarışmasında Türkiye İkinciliğ
+Bu proje 56. TÜBİTAK 2204-A Lise Araştırma ve Proje Yarışmasında Türkiye İkinciliği ödülünü kazanmıştır.
