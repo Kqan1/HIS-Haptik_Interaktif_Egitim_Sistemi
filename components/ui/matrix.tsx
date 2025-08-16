@@ -12,7 +12,8 @@ interface MatrixProps {
     disabled?: boolean;
 }
 
-const GRID_SIZE = 18; // Sabit grid boyutu
+const GRID_SIZE = 15; // Yatay grid boyutu
+const GRID_HEIGHT = 10; // Dikey grid boyutu
 
 export default function Matrix({ 
     initialData,
@@ -24,16 +25,16 @@ export default function Matrix({
 
     useEffect(() => {
         if (Array.isArray(initialData)) {
-            // Gelen veriyi 32x32'ye tamamla
-            const newGrid = Array(GRID_SIZE).fill(null).map((_, y) => 
+            // Gelen veriyi 15x10'a tamamla
+            const newGrid = Array(GRID_HEIGHT).fill(null).map((_, y) => 
                 Array(GRID_SIZE).fill(0).map((_, x) => 
                     initialData[y]?.[x] ?? 0
                 )
             );
             setGrid(newGrid);
         } else {
-            // Varsayılan 32x32 grid oluştur
-            setGrid(Array(GRID_SIZE).fill(null).map(() => Array(GRID_SIZE).fill(0)));
+            // Varsayılan 15x10 grid oluştur
+            setGrid(Array(GRID_HEIGHT).fill(null).map(() => Array(GRID_SIZE).fill(0)));
         }
     }, [initialData]);
 
@@ -95,18 +96,16 @@ export default function Matrix({
     };
 
     const handleReset = () => {
-        const newGrid = Array(GRID_SIZE).fill(0).map(() => Array(GRID_SIZE).fill(0));
+        const newGrid = Array(GRID_HEIGHT).fill(null).map(() => Array(GRID_SIZE).fill(0));
         setGrid(newGrid);
         onChange?.(newGrid);
     };
 
-    const handleSave = async () => {
 
-    };
 
     // Grid boşsa veya geçersizse bir loading göster
     if (!Array.isArray(grid) || grid.length === 0) {
-        return <div>Yükleniyor...</div>;
+        return <div>Loading...</div>;
     }
 
     return (
@@ -124,6 +123,7 @@ export default function Matrix({
                             disabled={disabled}
                         >
                             <PencilLine />
+                            Pen
                             <p className="sr-only">Çizme Düğmesi</p>
                         </ToggleGroupItem>
                         <ToggleGroupItem 
@@ -132,17 +132,18 @@ export default function Matrix({
                             disabled={disabled}
                         >
                             <Eraser />
+                            Eraser
                             <p className="sr-only">Silme Düğmesi</p>
                         </ToggleGroupItem>
                         <Separator orientation="vertical" className="h-8" />
                         <Button
                             variant="destructive"
-                            size="icon"
                             value="reset"
                             onClick={handleReset}
                             disabled={disabled}
                         >
                             <Trash2 />
+                            Delete
                         </Button>
                     </ToggleGroup>
                     
@@ -154,7 +155,7 @@ export default function Matrix({
                         row.map((cell: number, x: number) => (
                             <div
                                 key={`${x}-${y}`}
-                                className={`w-4 h-4 border border-gray-200 ${
+                                className={`size-6 border border-gray-200 ${
                                     editable ? 'cursor-pointer' : ''
                                 } ${
                                     cell === 1 ? 'bg-black' : 'bg-white'

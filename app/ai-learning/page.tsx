@@ -150,14 +150,14 @@ export default function Ai() {
 
     return (
         <>
-            <div className="flex">
+            <div className="flex max-h-[80vh] h-full">
                 <div className="flex-1">
-                    <div className="flex flex-col h-[90vh]">
+                    <div className="flex flex-col h-full">
                         <Heading 
                             className="py-4"
                             Icon={BrainCircuit}
-                            title="AI Öğretmeni"
-                            description="Buradan AI Öğretmen ile konuşarak öğrenebilirsin"
+                            title="AI Teacher"
+                            description="You can learn with AI Teacher here"
                         />
                         <div
                             id="chat-container"
@@ -195,7 +195,7 @@ export default function Ai() {
                                 </div>
                             ))}
                             {isLoading && (
-                                <div className="text-center text-gray-500">AI düşünüyor...</div>
+                                <div className="text-center text-gray-500">AI Teacher Thinking...</div>
                             )}
                         </div>
                         {error && <div className="text-red-500 text-center p-2">{error}</div>}
@@ -204,7 +204,7 @@ export default function Ai() {
                                 type="text"
                                 value={inputMessage}
                                 onChange={(e) => setInputMessage(e.target.value)}
-                                placeholder="Mesajınızı yazın..."
+                                placeholder="Enter Message..."
                                 onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
                                 className="flex-grow"
                             />

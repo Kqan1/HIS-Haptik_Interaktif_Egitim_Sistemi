@@ -16,14 +16,14 @@ export default async function Notes() {
         <>
             <div className="flex items-center justify-between my-6">
                 <Heading 
-                    title={`Notlar (${notes.length})`}
-                    description="Buradan kaydettiğin notları okuyabilirsin"
+                    title={`Notes (${notes.length})`}
+                    description="You can read your notes here"
                     Icon={Book}
                 />
                 <h1 className="text-3xl font-bold"></h1>
                 <Link className={buttonVariants({ size: "icon" })} href="/notes/new">
                     <Plus />
-                    <p className="sr-only">Yeni Not</p>
+                    <p className="sr-only">Now Note</p>
                 </Link>
             </div>
             <div className="grid grid-cols-2 gap-2">

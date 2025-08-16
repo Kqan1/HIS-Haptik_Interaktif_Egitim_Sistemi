@@ -9,8 +9,8 @@ export default function Header() {
 
     return (
         <div className="flex justify-center">
-            <header className="max-w-screen-md w-full flex justify-between py-1 px-4 border border-zinc-300">
-                <div className="">HİS</div>
+            <header className="max-w-[400px] w-full flex justify-between py-1 px-4 border border-zinc-300">
+                <div className="font-medium">HIES</div>
                 <div className="flex items-center gap-0.5">
                     <BatteryIndicator BatteryStatus={batterryStatus} />
                 </div>

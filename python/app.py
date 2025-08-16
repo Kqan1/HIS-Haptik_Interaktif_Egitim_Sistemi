@@ -6,14 +6,15 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'gizli-anahtar'
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-grid = np.zeros((18, 18), dtype=int).tolist()
-previous_matrix = np.zeros((18, 18), dtype=int).tolist()
+# 15x10 matris (15 sütun, 10 satır) - manual/page.tsx ile uyumlu
+grid = np.zeros((10, 15), dtype=int).tolist()
+previous_matrix = np.zeros((10, 15), dtype=int).tolist()
 
 # Grid güncelleme fonksiyonu (yalnızca previous_matrix'i eşitlemek için)
 def update_grid():
     global previous_matrix
-    for row in range(18):
-        for col in range(18):
+    for row in range(10):
+        for col in range(15):
             if previous_matrix[row][col] != grid[row][col]:
                 previous_matrix[row][col] = grid[row][col]
 
@@ -42,8 +43,8 @@ def handle_reset():
     global grid
     global previous_matrix
     
-    grid = np.zeros((18, 18), dtype=int).tolist()
-    previous_matrix = np.zeros((18, 18), dtype=int).tolist()
+    grid = np.zeros((10, 15), dtype=int).tolist()
+    previous_matrix = np.zeros((10, 15), dtype=int).tolist()
     
     update_grid()
     emit('init_grid', grid, broadcast=True)
@@ -60,4 +61,9 @@ def handle_matrix_selected(data):
     emit('init_grid', grid, broadcast=True)
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5000, host="0.0.0.0")
+    print("Sunucu başlatılıyor...")
+    print("http://localhost:5000 adresine gidin")
+    try:
+        socketio.run(app, debug=True, port=5000, host="0.0.0.0")
+    except Exception as e:
+        print(f"Sunucu başlatılırken hata oluştu: {e}")

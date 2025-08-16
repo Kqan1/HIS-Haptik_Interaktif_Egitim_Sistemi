@@ -14,41 +14,41 @@ export default function LectureRecords() {
     const Cards: CardType[] = [{
         href: "/test",
         date: "15/2/2025",
-        title: "Matematik Dersi",
+        title: "Math class",
     }, {
         href: "/test",
         date: "15/2/2025",
-        title: "Matematik Dersi",
+        title: "Math class",
     }, {
         href: "/test",
         date: "15/2/2025",
-        title: "Fizik Dersi",
+        title: "physics class",
     }, {
         href: "/test",
         date: "15/2/2025",
-        title: "Edebiyat Dersi",
+        title: "Literature Class",
     }];
 
     return (
         <div className="space-y-4">
             <Heading
-                title="Ders Kayıtları"
-                description="Buradan kayıtlı derslerini yeniden dinleyebilirsin"
+                title="Lesson Records"
+                description="You can listen to your recorded lessons here"
                 Icon={Book}
             />
             <div className="space-y-2">
                 <div className={buttonVariants({ variant: "outline", className: "w-full !justify-between !h-auto !p-1 hover:!bg-inherit" })}>
                     <div className="flex items-center gap-1">
-                        <Button variant="outline">
-                            <Plus /> Yeni Kayıt
+                        <Button variant="outline" className="px-3">
+                            <Plus /> New Records
                         </Button>
-                        <Button variant="destructive">
-                            <Trash2 /> Kayıtları sil
+                        <Button variant="destructive" className="px-3">
+                            <Trash2 /> Delete Records
                         </Button>
                         <Separator orientation="vertical" className="h-8" />
                     </div>
-                    <p className="flex items-center gap-1 cursor-pointer mr-2">
-                        <ListOrdered /> Tarihe göre
+                    <p className="flex items-center gap-1 border rounded p-2 cursor-pointer">
+                        <ListOrdered /> 
                     </p>
                 </div>
                 <Separator />
